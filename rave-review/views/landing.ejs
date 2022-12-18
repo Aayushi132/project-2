@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Restaurant Review</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/3c6db3bb6d.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+        <style>
+        body {
+            background-color: #f0f4f7;
+            overflow-x: hidden;
+        }
+        .carousel-item {
+            height: 450px;
+        }
+        .carousel-image-1 {
+            background: url(https://img.freepik.com/free-photo/paneer-butter-masala-cheese-cottage-curry-served-with-rice-laccha-paratha_466689-73715.jpg?w=996&t=st=1671090300~exp=1671090900~hmac=915df78ae21f33e0d897680c36a626d6ac7bcd6456494e216de47ac708e906bd);
+            background-size: cover;
+        }
+        .carousel-image-2 {
+            background: url(https://img.freepik.com/premium-photo/assorted-indian-recipes-food-various_79295-7226.jpg?w=1060);
+            background-size: cover;
+        }
+        .carousel-image-3 {
+            background: url(https://img.freepik.com/premium-photo/pizza-italian-cuisine-wooden-background-copy-space_187166-29242.jpg?w=996);
+            background-size: cover;
+        }
+        .carousel-image-4 {
+            background: url(https://img.freepik.com/free-photo/indian-food-circular-frame-with-copy-space_23-2148747658.jpg?w=996&t=st=1671090430~exp=1671091030~hmac=2b0f59e9e385c48d364fb37ea3699e655cde7a21bda4f250cf300b182aa94288);
+            background-size: cover;
+        }
+        .carousel-image-5 {
+            background: url(https://img.freepik.com/free-photo/traditional-indian-soup-lentils-indian-dhal-spicy-curry-bowl-spices-herbs-rustic-black-wooden-table_2829-18717.jpg?w=996&t=st=1671091187~exp=1671091787~hmac=edb851f82aa54afa07bc2f33eed3c00486127ec3687b7898597f0d4c875aa361);
+            background-size: cover;
+        }
+        #home-heading {
+            position: relative;
+            min-height: 200px;
+            background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 20vh;
+            text-align: center;
+            color: #fff;
+        }
+        .dark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        #gallery {
+            background-color: #FFF0F5;
+        }
+        #gallery h1
+        {
+        	margin: 10px;
+        	font-weight: bold;
+        }
+        #main-footer {
+            background: #000;
+            color: #fff;
+        }
+        .logo{
+          font-family: 'Sacramento',cursive;
+          color:white;
+        }
+        a{
+            color:white;
+        }
+        .navbar-nav{
+            margin-left: 350px;
+        }
+        .nav-item{
+            margin-right: 8px;
+        }
+        .log{
+            margin-left: 425px;
+        }
+        .des{
+            text-align: center;
+        }
+        .card-img-top{
+            height: 30% !important;
+            width: 20% !important;
+            padding: 10px;
+        }
+    </style>
+	</head>
+	<body>
+
+    <section>
+       
+        
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+              <h1 class="navbar-brand logo" href="#">Rave Reviews</h1>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/restaurants">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/restaurants">ABOUT US</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    EXPLORE
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/review">Comments</a></li>
+                      <li><a class="dropdown-item" href="/restaurants">Restaurants</a></li>
+                  
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/contactUs">CONTACT</a>
+                  </li>
+                </ul>
+                
+                    <div class="nav-item log">
+                        <a class="nav-link" href="/login">LOGIN | SIGNUP</a>
+                      </div>
+                
+                </div>
+              </div>
+            </div>
+          </nav>
+    </section>
+
+
+
+
+
+
+       
+		<!-- SHOWCASE SLIDER -->
+    <section id="showcase">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-image-1 active">
+                    <div class="container">
+                        <div class="carousel-caption  mb-5">
+
+                            <a href="/restaurants" class="btn btn-lg btn-danger">View All Restaurants</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item carousel-image-2 ">
+                    <div class="container">
+                        <div class="carousel-caption  mb-5">
+
+                            <a href="/restaurants" class="btn btn-lg btn-danger">View All Restaurants</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image-3 ">
+                    <div class="container">
+                        <div class="carousel-caption  mb-5">
+
+                            <a href="/restaurants" class="btn btn-lg btn-danger">View All Restaurants</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image-4 ">
+                    <div class="container">
+                        <div class="carousel-caption  mb-5">
+
+                            <a href="/restaurants" class="btn btn-lg btn-danger">View All Restaurants</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image-5 ">
+                    <div class="container">
+                        <div class="carousel-caption  mb-5">
+
+                            <a href="/restaurants" class="btn btn-lg btn-danger">View All Restaurants</a>
+                        </div>
+                    </div>
+                </div>
+
+            <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+
+            <a href="#myCarousel" data-slide="next" class="carousel-control-next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </section>
+
+    <!--HOME ICON SECTION  -->
+    <section id="home-icons" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-2 text-center">
+                    <i class="fas fa-mug-hot fa-3x mb-2"></i>
+                    <h3>Cafe`s & Luxury Dining</h3>
+
+                </div>
+                <div class="col-md-4 mb-2 text-center">
+                    <i class="fa fa-glass-cheers fa-3x mb-2"></i>
+                    <h3>Drinks & Night Life</h3>
+
+                </div>
+                <div class="col-md-4 mb-2 text-center">
+                    <i class="fas fa-shopping-cart fa-3x mb-2"></i>
+                    <h3>Pocket Friendly Delivery</h3>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HOME HEADING SECTION -->
+    <section id="home-heading" class="p-5">
+        <div class="dark-overlay">
+            <div class="row">
+                <div class="col">
+                    <div class="container pt-5">
+                        <h1>Are You Ready To Get Started?</h1>
+                        <p class="d-none d-md-block">Explore the curated lists of top restaurants, cafes, pubs, and bars
+                            in Delhi NCR, based on trends</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section id="info" class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 align-self-center">
+                    <h3>Restaurant Review<span style="background-color:gold; color:white; padding:5px;border-radius:5px;margin: 5px">Gold</span></h3>
+                    <p>Experience new places in your city every day and enjoy limitless dining privileges!</p>
+                    <a href="#" class="btn btn-outline-danger btn-lg">Learn More</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1503591099259-a96e250e0a67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                        alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-5" >
+        <div class="container">
+            <h1 class="text-center">Top Comments</h1>
+        </div>
+       
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                      <div class="card h-200">
+                        <div class="d-flex">
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="card-img-top" alt="...">
+                        <p style="margin-top: 35px;">February 11, 2022 @ 12:58 pm</p>
+                    </div>
+                        <div class="card-body">
+                          <h5 class="card-title">CYNTHIA</h5>
+                          <p class="card-text">Delicious and authentic food! Make sure you order the chicken roast and the mashed potatoes!</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-200">
+                        <div class="d-flex">
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="card-img-top" alt="...">
+                        <p style="margin-top: 35px;">March 1, 2022 @ 11:31 am</p>
+                    </div>
+                        <div class="card-body">
+                          <h5 class="card-title">JACKSON</h5>
+                          <p class="card-text">I will a hundred percent go there again. Their Salmon is to die for and the goat cheese balls are out of this world!</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-200">
+                        <div class="d-flex">
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="card-img-top" alt="...">
+                        <p style="margin-top: 35px;">March 15, 2022 @ 9:46 am</p>
+                    </div>
+                        <div class="card-body">
+                          <h5 class="card-title">ZANAB</h5>
+                          <p class="card-text">It’s a winner! This was my first time trying Ethiopian food and I can't wait to go back there again!</p>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+               
+
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h1 class="text-center">Top Restaurants</h1>
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <a href="https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/Jaipur-Adda-400x266.jpg"
+                        data-toggle="lightbox" data-gallery="img-gallery" data-height="320" data-width="510">
+                        <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/Jaipur-Adda-400x266.jpg"
+                            alt="" class="img-fluid">
+                    </a>
+                    <p class="des">With new Cafés opening in every nook and corner of the city, Wallace no longer sticks to the monotony of fine dining, and experimenting with the themes of the restaurants is the new trend. Wallace Adda is among the many famous restaurants in Wallace that allow you to feel the wind in your hair while you devour mouth-watering food. But what sets this place apart is its cheery interiors, magnificent wall art and fine wood furniture that adds a royal feel to the whole experience.</p>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/Samode-Haveli-400x267.jpg"
+                        data-toggle="lightbox" data-gallery="img-gallery" data-height="312" data-width="510">
+                        <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/Samode-Haveli-400x267.jpg"
+                            alt="" class="img-fluid">
+                    </a>
+                    <p class="des">An urban oasis tucked inside the walled city of Wallace, Samode Haveli is a traditional Indian mansion that sets the definition of royalty on a new level. Converted into a luxury hotel by the royal family of Samode, this quintessential Indo-Saracenic regal residence is steeped in history and the age-old traditions of impeccable hospitality, making it one of the best places to eat in Wallace.</p>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/Dragon-House-400x267.jpg"
+                        data-toggle="lightbox" data-gallery="img-gallery" data-height="312" data-width="510">
+                        <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/Dragon-House-400x267.jpg"
+                            alt="" class="img-fluid">
+                    </a>
+                    <p class="des">One of the best Chinese restaurants in Wallace, the bistro impresses one with its emphasis on simplicity and flavor. Indulge in an array of authentic Chinese dishes or pick a modern rendition of the traditional recipe from their wide range of selection and gorge on the heavenly taste of Asian food. So to devour the best food in Wallace, head to Chao Chinese Bistro on your next vacation. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="text-center p-4">
+        <div class="container">
+            <div class="row">
+               
+                <div class="col">
+                    <p style="text-align: center; font-family: 'Sacramento',cursive;">@Copyright RAVE REVIEWS 2022</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	</body>
+</html>

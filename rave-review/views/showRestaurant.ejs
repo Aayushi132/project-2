@@ -1,0 +1,113 @@
+<%- include('./navbar.ejs')%>
+		 <style>
+	        body {
+	            background-color: rgb(236, 226, 226);
+	        }
+	    	</style>
+	</head>
+
+<body>
+  
+                </ul>
+                <div class="collapse navbar-collapse">
+                    <ul class=" nav navbar-nav navbar-right">
+                        <li><span style="color:antiquewhite; padding-top:15px; margin:15px;">Welcome<br><%=currentUser.username%></span>
+                        </li>
+                        <li><a href="/">LOGOUT</a></li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                <div class="list-group">
+                    <li class="list-group-item active"><a href="#"><span style="color:white">Menu</span></a></li>
+                    <li class="list-group-item ">Timings</li>
+                    <li class="list-group-item "><a href="#">Map Location</a></li>
+                </div>
+            </div>
+            <div class="col-md-9">
+
+                <div class="thumbnail">
+
+                    <img class="img-responsive" src="<%= restaurant.image %>" />
+                    <div class="caption-full">
+                        <h4 class="pull-right">$100/Two Person</h4>
+                        <h4><a><%= restaurant.name %></a></h4>
+                        <p><strong>Submitted by:</strong><%=restaurant.author.username%></p>
+                        <p><%=restaurant.description%></p>
+                        <p>
+                            Current restaurant rating: <strong><span
+                                    style="color:aliceblue; font-weight:bold;background-color:rgb(236, 127, 25);;;padding:5px;border-radius: 5px;"><%= restaurant.avgRating%>
+                                    stars</span></strong>
+                        </p>
+                        <a class="btn btn-warning" href="/restaurants/<%=restaurant._id%>/editRestaurant">Edit</a>
+                        <form style="display: inline;"action="/restaurants/<%=restaurant._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="well">
+
+                    <hr>
+                    <p><strong>Comments Section</strong></p>
+                    <div class="row" style="background-color:blanchedalmond;padding:9px;margin:10px;">
+                        <form action="/restaurants/<%=restaurant._id%>" method="POST">
+                            <div class="form-group">
+                                <input class="form-control" type="number" name="comment[rating]" placeholder="rating (1-5)"
+                                    required />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="comment[text]" placeholder="review" required />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="comment[firstname]" placeholder="firstname"
+                                     />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="comment[lastname]" placeholder="lastname"
+                                     />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="comment[date]" placeholder="date"
+                                   />
+                            </div>
+
+
+                            <div class="form-group">
+                                <button class="btn btn-lg btn-primary btn-block ">Submit!</button>
+                            </div>
+                        </form>
+
+                    </div>
+                   <% restaurant.comments.forEach(function(comment){ %>
+                    <div class="row" style="background-color:blanchedalmond;padding:9px;margin:10px;">
+                        <div class="col-md-12 ">
+                            <div>
+                                <strong>
+                                    <span style="color: orange;" class="glyphicon glyphicon-user"
+                                        aria-hidden="true">&nbsp;
+                                    </span>
+                                        <%= comment.author.username %>
+                                </strong> 
+                                <p><%= comment.text %></p>
+                                <p><%= comment.firstname %></p>
+                                <p><%= comment.lastname %></p>
+                                <p><%= comment.date %></p>
+                                <form action="/restaurants/<%=restaurant._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                    <input type="Submit" class="btn btn-xs btn-danger" value="Delete">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+
+
+        <p style="text-align: center; font-family: 'Sacramento',cursive;">@Copyright RAVE REVIEWS 2022</p>
